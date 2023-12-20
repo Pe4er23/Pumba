@@ -72,7 +72,7 @@
     }
     function showNavElements() {
         let nav = document.getElementById('menu-list');
-        nav.style.display = (market.style.display === 'none') ? 'block' : 'none';
+        nav.style.display = (nav.style.display === 'none') ? 'block' : 'none';
     }
 
     let nav = document.getElementById('menu-list');
@@ -88,48 +88,66 @@
         }
     });
     // Отображение рамки аккаунта
-    document.getElementById('acc_btn').addEventListener('click', function() {
-        let acc = document.getElementById('acc_div');
-        acc.style.display = (acc.style.display === 'none') ? 'block' : 'none';
-    });
-
-    let div = document.getElementById('acc_div');
-
-    div.addEventListener('click', function(event) {
-        event.stopPropagation(); // Предотвращаем всплытие события
-    });
-
+    let notificationBox = document.getElementById("acc_div");
+    // Функции для отображения и скрытия блока
+    function toggleNotification() {
+        if (notificationBox.style.opacity === "0" || notificationBox.style.opacity === "") {
+            showNotification();
+        } else {
+            hideNotification();
+        }
+    }
+    function showNotification() {
+        notificationBox.style.display = "block";
+        setTimeout(function() {
+            notificationBox.style.opacity = "1";
+            notificationBox.style.transform = "translateY(0)";
+        }, 0);
+    }
+    function hideNotification() {
+        notificationBox.style.opacity = "0";
+        notificationBox.style.transform = "translateY(-20px)";
+        setTimeout(function() {
+            notificationBox.style.display = "none";
+        }, 500);
+    }
     document.addEventListener('click', function(event) {
-        let div = document.getElementById('acc_div');
         let showButton = document.getElementById('acc_btn');
-        if (event.target !== div && event.target !== showButton) {
-            div.style.display = 'none';
-        }
-    });
-    //________________________________________________________________________
-    // Отображение рамки покупки
-    document.getElementById('market_btn').addEventListener('click', function() {
-        let market = document.getElementById('market_div');
-        market.style.display = (market.style.display === 'none') ? 'block' : 'none';
-        if (market.style.display === 'none') {
-            market.style.display = 'block'
-            market.style.opacity = '1';
+        if (event.target !== notificationBox && event.target !== showButton) {
+            hideNotification();
         }
     });
 
-    let market = document.getElementById('market_div');
 
-    market.addEventListener('click', function(event) {
-        event.stopPropagation(); // Предотвращаем всплытие события
-    });
-
+    let market = document.getElementById("market_div");
+    function toggleMarket() {
+        if (market.style.opacity === "0" || market.style.opacity === "") {
+            showMarket();
+        } else {
+            hideMarket();
+        }
+    }
+    function showMarket() {
+        market.style.display = "block";
+        setTimeout(function() {
+            // market.style.opacity = "1";
+            market.style.transform = "translateX(0)";
+        }, 0);
+    }
+    function hideMarket() {
+        // market.style.opacity = "0";
+        market.style.transform = "translateX(100%)";
+        setTimeout(function() {
+            market.style.display = "none";
+        }, 500);
+    }
     document.addEventListener('click', function(event) {
-        let div = document.getElementById('market_div');
         let showButton = document.getElementById('market_btn');
-        if (event.target !== div && event.target !== showButton   ) {
-            market.style.display = 'none';
+        if (event.target !== market && event.target !== showButton) {
+            hideMarket();
         }
-    });
+    })
+    //________________________________________________________________________
 
     function hideDivAccount() {
         let divToHide = document.getElementById('acc_div');
@@ -139,11 +157,3 @@
         let divToHide = document.getElementById('market_div');
         divToHide.style.display = 'none';
     }
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     const menuIcon = document.getElementById('menu-icon');
-    //     const navList = document.getElementById('nav');
-    //
-    //     menuIcon.addEventListener('click', function () {
-    //         navList.classList.toggle('show');
-    //     });
-    // });

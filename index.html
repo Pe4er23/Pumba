@@ -8,7 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="for-slick/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="for-slick/slick/slick-theme.css"/>
+    <link href="https://itchief.ru/examples/libs/ui-components/itc-slider/itc-slider.css" rel="stylesheet">
+    <script src="https://itchief.ru/examples/libs/ui-components/itc-slider/itc-slider.js" defer></script>
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="pics/pumba.svg">
 </head>
 <body>
 <header class="header">
@@ -36,8 +45,8 @@
                 <input class="header_input" type="search" placeholder="Пошук">
             </label>
             <div class="nav_icons">
-                <button class="nav_button_icon"><img src="pics/shop.svg" alt="" width="32" id="market_btn"></button>
-                <button class="nav_button_icon"><img src="pics/person.svg" alt="" width="45" id="acc_btn"></button>
+                <button class="nav_button_icon"><img src="pics/shop.svg" alt="" width="32" id="market_btn" onclick="toggleMarket()"></button>
+                <button class="nav_button_icon"><img src="pics/person.svg" alt="" width="45" id="acc_btn" onclick="toggleNotification()"></button>
             </div>
         </div>
     </div>
@@ -303,7 +312,7 @@
             </div>
         </div>
     </div>
-    <div class="menu-list" id="menu-list">
+    <div class="menu-list" id="menu-list" style="display:none;">
         <a href="" class="nav_item_div"><span class="nav_item"> Чоловіки </span></a>
         <a href="" class="nav_item_div"><span class="nav_item"> Жінки </span></a>
         <a href="" class="nav_item_div"><span class="nav_item"> Діти </span></a>
@@ -312,12 +321,12 @@
         <a href="" class="nav_item_div"><span class="nav_item"> Технології </span></a>
         <a href="" class="nav_item_div"><span class="nav_item"> Розпродаж </span></a>
     </div>
-    <div class="account_div" id="acc_div">
+    <div class="account_div" id="acc_div" style="">
         <div class="acc_info">
             <div class="account_head">
                 <span id="acc_header">Швидкі посилання</span>
                 <button class="btn-krestik" id="btn-krestik-acc"><img src="pics/krestik.svg" alt="none"
-                                                                      onclick="hideDivAccount()"></button>
+                                                                      onclick="hideNotification()"></button>
             </div>
             <div class="account_info">
                 <a href="pages/authorisation-page.html">
@@ -350,12 +359,12 @@
             </div>
         </div>
     </div>
-    <div class="market" id="market_div">
+    <div class="market" id="market_div" style="display:none;">
         <div class="market_div">
             <div class="market-el-div">
                 <span id="ur-basket">ВАШ КОШИК(0)</span>
                 <button class="btn-krestik" id="btn-krestik-shop"><img src="pics/krestik.svg" alt="none"
-                                                                       onclick="hideDivMarket()"></button>
+                                                                       onclick=""></button>
             </div>
             <span id="market-text">Ваш кошик порожній</span>
             <div class="basket"></div>
@@ -388,143 +397,276 @@
         </div>
         <div class="gallery">
             <div class="otstup">
-                <div class="collection">
-                    <i class="arrow-left"> <img src="pics/arrow.svg" alt="none" class="arrow" id="arrow-left">prev</i>
-                    <div class="item_list">
-                        <a href="" class="item_link">
+                <!--                <div class="collection">-->
+                <div class="slider" style="">
+                    <!--                    <i class="arrow-left"> <img src="pics/arrow.svg" alt="none" class="arrow" id="arrow-left">prev</i>-->
+                    <div class="item_list" style="display:flex;">
+                        <a href="pages/firstCollection.html" class="item_link">
                             <button class="btn-on-pic">Купити</button>
-                            <img src="pics/white_foot.png" alt="sorry" class="" id="white_foot1">
+                            <img src="pics/white_foot.png" alt="sorry" id="white_foot1" class="image-for-shop">
                         </a>
-                        <a href="" class="item_name">Кросівки SLIPSTREAM SNEAKERS</a>
-                        <a href="" class="item_price">3 199,00 ₴</a>
+                        <a href="pages/firstCollection.html" class="item_name">Кросівки SLIPSTREAM SNEAKERS</a>
+                        <a href="pages/firstCollection.html" class="item_price">3 199,00 ₴</a>
                     </div>
-                    <div class="item_list">
-                        <a href="" class="item_link">
+                    <div class="item_list" style="display:flex;">
+                        <a href="pages/firstCollection.html" class="item_link">
                             <button class="btn-on-pic">Купити</button>
-                            <img src="pics/black.png" alt="sorry">
+                            <img src="pics/black.png" alt="sorry" class="image-for-shop">
                         </a>
-                        <a href="" class="item_name">Сорочка DOWNTOWN MEN’S CO...</a>
-                        <a href="" class="item_price">2 799,00 ₴</a>
+                        <a href="pages/firstCollection.html" class="item_name">Сорочка DOWNTOWN MEN’S CO...</a>
+                        <a href="pages/firstCollection.html" class="item_price">2 799,00 ₴</a>
                     </div>
-                    <div class="item_list">
-                        <a href="" class="item_link">
+                    <div class="item_list" style="display:flex;">
+                        <a href="pages/firstCollection.html" class="item_link">
                             <button class="btn-on-pic">Купити</button>
-                            <img src="pics/clothes_girl.png" alt="sorry">
+                            <img src="pics/clothes_girl.png" alt="sorry" class="image-for-shop">
                         </a>
-                        <a href="" class="item_name">Світшот DOWNTOWN WOMEN’S OVE...</a>
-                        <a href="" class="item_price">2 899,00 ₴</a>
+                        <a href="pages/firstCollection.html" class="item_name">Світшот DOWNTOWN WOMEN’S OVE...</a>
+                        <a href="pages/firstCollection.html" class="item_price">2 899,00 ₴</a>
                     </div>
-                    <div class="item_list">
-                        <a href="" class="item_link">
+                    <div class="item_list" style="display:flex;">
+                        <a href="pages/firstCollection.html" class="item_link">
                             <button class="btn-on-pic">Купити</button>
-                            <img src="pics/white_foot2.png" alt="sorry">
+                            <img src="pics/white_foot2.png" alt="sorry" class="image-for-shop">
                         </a>
-                        <a href="" class="item_name">Кросівки CALI COURT MATCH SNEA...</a>
-                        <a href="" class="item_price">3 599,00 ₴</a>
+                        <a href="pages/firstCollection.html" class="item_name">Кросівки CALI COURT MATCH SNEA...</a>
+                        <a href="pages/firstCollection.html" class="item_price">3 599,00 ₴</a>
                     </div>
-                    <div class="item_list" id="hiden_element">
-                        <a href="" class="item_link">
+                    <!--====================================================-->
+                    <div class="item_list" style="display:flex;">
+                        <a href="pages/firstCollection.html" class="item_link">
                             <button class="btn-on-pic">Купити</button>
-                            <img src="pics/white_foot2.png" alt="sorry">
+                            <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/621331/31/mod01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                 alt="sorry" class="image-for-shop">
                         </a>
-                        <a href="" class="item_name">Кросівки CALI COURT MATCH SNEA...</a>
-                        <a href="" class="item_price">3 599,00 ₴</a>
+                        <a href="pages/firstCollection.html" class="item_name">Кросівки CALI COURT MATCH SNEA...</a>
+                        <a href="pages/firstCollection.html" class="item_price">3 599,00 ₴</a>
                     </div>
-                    <i class="arrow-right"> <img src="pics/arrow.svg" alt="none" class="arrow" id="arrow-right">next</i>
-                </div>
-            </div>
-            <div class="otstup">
-                <div class="collection">
-                    <i class="arrow-left"> <img src="pics/arrow.svg" alt="none" class="arrow">prev</i>
-                    <div class="item_list">
-                        <a href="" class="item_link">
+                    <div class="item_list" style="display:flex;">
+                        <a href="pages/firstCollection.html" class="item_link">
                             <button class="btn-on-pic">Купити</button>
-                            <img src="pics/pink_foot1.png" alt="sorry">
+                            <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/621332/31/mod01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                 alt="sorry" class="image-for-shop">
                         </a>
-                        <a href="" class="item_name">Кросівки FOREVERRUN NITRO WOME...</a>
-                        <a href="" class="item_price">3 199,00 ₴</a>
+                        <a href="pages/firstCollection.html" class="item_name">Кросівки CALI COURT MATCH SNEA...</a>
+                        <a href="pages/firstCollection.html" class="item_price">3 599,00 ₴</a>
                     </div>
-                    <div class="item_list">
-                        <a href="" class="item_link">
+                    <div class="item_list" style="display:flex;">
+                        <a href="pages/firstCollection.html" class="item_link">
                             <button class="btn-on-pic">Купити</button>
-                            <img src="pics/pink_cl1.png" alt="sorry">
+                            <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/621321/04/mod01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                 alt="sorry" class="image-for-shop">
                         </a>
-                        <a href="" class="item_name">Бра PRINTED ULTRAFORM RUNNING...</a>
-                        <a href="" class="item_price">2 799,00 ₴</a>
+                        <a href="pages/firstCollection.html" class="item_name">Кросівки CALI COURT MATCH SNEA...</a>
+                        <a href="pages/firstCollection.html" class="item_price">3 599,00 ₴</a>
                     </div>
-                    <div class="item_list">
-                        <a href="" class="item_link">
+                    <div class="item_list" style="display:flex;">
+                        <a href="pages/firstCollection.html" class="item_link">
                             <button class="btn-on-pic">Купити</button>
-                            <img src="pics/pink_cl2.png" alt="sorry">
+                            <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/676816/01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                 alt="sorry" class="image-for-shop">
                         </a>
-                        <a href="" class="item_name">Шорти ULTRAWEAVE 2-IN-1 RUNNING...</a>
-                        <a href="" class="item_price">2 899,00 ₴</a>
+                        <a href="pages/firstCollection.html" class="item_name">Кросівки CALI COURT MATCH SNEA...</a>
+                        <a href="pages/firstCollection.html" class="item_price">3 599,00 ₴</a>
                     </div>
-                    <div class="item_list">
-                        <a href="" class="item_link">
-                            <button class="btn-on-pic">Купити</button>
-                            <img src="pics/pink_foot2.png" alt="sorry">
-                        </a>
-                        <a href="" class="item_name">Кросівки DEVIATE NITRO 2 RUNNI...</a>
-                        <a href="" class="item_price">3 599,00 ₴</a>
-                    </div>
-                    <i class="arrow-right"> <img src="pics/arrow.svg" alt="none" class="arrow">next</i>
+                    <!--                    <i class="arrow-right"> <img src="pics/arrow.svg" alt="none" class="arrow" id="arrow-right">next</i>-->
                 </div>
             </div>
             <div>
                 <div class="items_on_pic">
-                    <a href="#" class="link-for-main-shop">
+                    <a href="pages/secondCollection.html" class="link-for-main-shop">
+                        <h1 class="section_title" style="color:black;">PUMA X LEMLEM</h1>
+                        <p class="section_description" style="color:black;font-size:18px">ВРОДЖЕНЕ ВІДЧУТТЯ СТИЛЮ</p>
+                    </a>
+                    <a href="pages/secondCollection.html" class="buttons">
+                        <a href="pages/secondCollection.html" class="link_button">
+                            <button class="shop_button dark_shop_button">КУПИТИ</button>
+                        </a>
+                        <a href="pages/secondCollection.html" class="link_button">
+                            <button class="shop_button dark_shop_button">ДІЗНАТИСЯ БІЛЬШЕ</button>
+                        </a>
+                    </a>
+                </div>
+                <a href="pages/secondCollection.html" class="link-for-main-shop">
+                    <img class="background_pic" src="pics/background-with-girl.jpg" alt="">
+                </a>
+            </div>
+            <div class="otstup">
+                <div class="collection">
+                    <!--                    <i class="arrow-left"> <img src="pics/arrow.svg" alt="none" class="arrow">prev</i>-->
+                    <div class="slider" style="">
+                        <div class="item_list" style="display:flex;">
+                            <a href="" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="pics/pink_foot1.png" alt="sorry" class="image-for-shop">
+                            </a>
+                            <a href="" class="item_name">Кросівки FOREVERRUN NITRO WOME...</a>
+                            <a href="" class="item_price">3 199,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="pics/pink_cl1.png" alt="sorry" class="image-for-shop">
+                            </a>
+                            <a href="" class="item_name">Бра PRINTED ULTRAFORM RUNNING...</a>
+                            <a href="" class="item_price">2 799,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="pics/pink_cl2.png" alt="sorry" class="image-for-shop">
+                            </a>
+                            <a href="" class="item_name">Шорти ULTRAWEAVE 2-IN-1 RUNNING...</a>
+                            <a href="" class="item_price">2 899,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="pics/pink_foot2.png" alt="sorry">
+                            </a>
+                            <a href="" class="item_name">Кросівки DEVIATE NITRO 2 RUNNI...</a>
+                            <a href="" class="item_price">3 599,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/523959/01/mod01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                     alt="sorry" class="image-for-shop">
+                            </a>
+                            <a href="" class="item_name">БРА PUMA X LEMLEM LOW IMPACT TR...</a>
+                            <a href="" class="item_price">1 999 ,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/523964/01/mod01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                     alt="sorry" class="image-for-shop">
+                            </a>
+                            <a href="" class="item_name">ЛЕГІНСИ PUMA X LEMLEM HIGH WAIST...</a>
+                            <a href="" class="item_price">3 199,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/394009/01/sv01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                     alt="sorry" class="image-for-shop">
+                            </a>
+                            <a href="" class="item_name">КЕДИ PUMA X LEMLEM SUEDE SNEAK...</a>
+                            <a href="" class="item_price">2 699,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/379040/01/sv01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                     alt="sorry" class="image-for-shop">
+                            </a>
+                            <a href="" class="item_name">КРОСІВКИ PUMA X LEMLEM NITRO LU...</a>
+                            <a href="" class="item_price">4 000,00 ₴</a>
+                        </div>
+                        <!--                    <i class="arrow-right"> <img src="pics/arrow.svg" alt="none" class="arrow">next</i>-->
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="items_on_pic">
+                    <a href="pages/secondCollection.html" class="link-for-main-shop">
                         <h1 class="section_title">ФК ШАХТАР</h1>
                     </a>
-                    <a href="#" class="buttons">
-                        <a href="#" class="link_button">
+                    <a href="pages/secondCollection.html" class="buttons">
+                        <a href="pages/secondCollection.html" class="link_button">
                             <button class="shop_button">КУПИТИ</button>
                         </a>
-                        <a href="#" class="link_button">
+                        <a href="pages/secondCollection.html" class="link_button">
                             <button class="shop_button">ДІЗНАТИСЯ БІЛЬШЕ</button>
                         </a>
                     </a>
                 </div>
-                <a href="#" class="link-for-main-shop">
+                <a href="pages/secondCollection.html" class="link-for-main-shop">
                     <img class="background_pic" src="pics/footballers.jpg" alt="">
                 </a>
             </div>
             <div class="otstup">
                 <div class="collection">
-                    <i class="arrow-left"> <img src="pics/arrow.svg" alt="none" class="arrow">prev</i>
-                    <div class="item_list">
-                        <a href="" class="item_link">
-                            <button class="btn-on-pic">Купити</button>
-                            <img src="pics/image25.png" class="item_picture" alt="sorry">
-                        </a>
-                        <a href="" class="item_name">Футболка FC SHAKHTAR DONETSK HO...</a>
-                        <a href="" class="item_price">3 199,00 ₴</a>
+                    <div class="slider" style="">
+                        <!--                    <i class="arrow-left"> <img src="pics/arrow.svg" alt="none" class="arrow">prev</i>-->
+                        <div class="item_list" style="display:flex;">
+                            <a href="pages/secondCollection.html" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="pics/image25.png" class="image-for-shop" alt="sorry">
+                            </a>
+                            <a href="pages/secondCollection.html" class="item_name">Футболка FC SHAKHTAR DONETSK
+                                HO...</a>
+                            <a href="pages/secondCollection.html" class="item_price">3 199,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="pages/secondCollection.html" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="pics/image26.png" class="image-for-shop" alt="sorry">
+                            </a>
+                            <a href="pages/secondCollection.html" class="item_name">Шорти FC SHAKHTAR DONETSK
+                                22/23...</a>
+                            <a href="pages/secondCollection.html" class="item_price">2 799,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="pages/secondCollection.html" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="pics/image27.png" class="image-for-shop" alt="sorry">
+                            </a>
+                            <a href="pages/secondCollection.html" class="item_name">Шорти FC SHAKHTAR DONETSK
+                                22/23...</a>
+                            <a href="pages/secondCollection.html" class="item_price">2 899,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="pages/secondCollection.html" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="pics/image28.png" class="image-for-shop" alt="sorry">
+                            </a>
+                            <a href="pages/secondCollection.html" class="item_name">Футболка FC SHAKHTAR DONETSK
+                                AW...</a>
+                            <a href="pages/secondCollection.html" class="item_price">3 599,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="pages/secondCollection.html" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/767256/10/mod01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                     class="image-for-shop" alt="sorry">
+                            </a>
+                            <a href="pages/secondCollection.html" class="item_name">ФУТБОЛКА FC SHAKHTAR DONETSK
+                                FOO...</a>
+                            <a href="pages/secondCollection.html" class="item_price">1 299,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="pages/secondCollection.html" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/765637/02/fnd/UKR/w/1000/h/1000/fmt/png"
+                                     class="image-for-shop" alt="sorry">
+                            </a>
+                            <a href="pages/secondCollection.html" class="item_name">ШОРТИ FC SHAKHTAR DONETSK
+                                22/23...</a>
+                            <a href="pages/secondCollection.html" class="item_price">1 399,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="pages/secondCollection.html" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/767252/11/mod01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                     class="image-for-shop" alt="sorry">
+                            </a>
+                            <a href="pages/secondCollection.html" class="item_name">КУРТКА FC SHAKHTAR DONETSK
+                                FOOTBALL...</a>
+                            <a href="pages/secondCollection.html" class="item_price">3 199,00 ₴</a>
+                        </div>
+                        <div class="item_list" style="display:flex;">
+                            <a href="pages/secondCollection.html" class="item_link">
+                                <button class="btn-on-pic">Купити</button>
+                                <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/767233/05/mod01/fnd/UKR/w/1000/h/1000/fmt/png"
+                                     class="image-for-shop" alt="sorry">
+                            </a>
+                            <a href="pages/secondCollection.html" class="item_name">ОЛІМПІЙКА FC SHAKHTAR DONETSK
+                                FOO...</a>
+                            <a href="pages/secondCollection.html" class="item_price">4 199,00 ₴</a>
+                        </div>
+                        <!--                    <i class="arrow-right"> <img src="pics/arrow.svg" alt="none" class="arrow">next</i>-->
                     </div>
-                    <div class="item_list">
-                        <a href="" class="item_link">
-                            <button class="btn-on-pic">Купити</button>
-                            <img src="pics/image26.png" class="item_picture" alt="sorry">
-                        </a>
-                        <a href="" class="item_name">Шорти FC SHAKHTAR DONETSK 22/23...</a>
-                        <a href="" class="item_price">2 799,00 ₴</a>
-                    </div>
-                    <div class="item_list">
-                        <a href="" class="item_link">
-                            <button class="btn-on-pic">Купити</button>
-                            <img src="pics/image27.png" class="item_picture" alt="sorry">
-                        </a>
-                        <a href="" class="item_name">Шорти FC SHAKHTAR DONETSK 22/23...</a>
-                        <a href="" class="item_price">2 899,00 ₴</a>
-                    </div>
-                    <div class="item_list">
-                        <a href="" class="item_link">
-                            <button class="btn-on-pic">Купити</button>
-                            <img src="pics/image28.png" class="item_picture" alt="sorry">
-                        </a>
-                        <a href="" class="item_name">Футболка FC SHAKHTAR DONETSK AW...</a>
-                        <a href="" class="item_price">3 599,00 ₴</a>
-                    </div>
-                    <i class="arrow-right"> <img src="pics/arrow.svg" alt="none" class="arrow">next</i>
                 </div>
             </div>
         </div>
@@ -573,7 +715,19 @@
         </div>
     </div>
 </footer>
+<script type="text/javascript" src="slick-slieder.js"></script>
+<script type="text/javascript" src="for-slick/slick/slick.min.js"></script>
 <script src="script.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: false,
+            dots: true,
+            arrows: true
+        });
+    });
+</script>
 </body>
 </html>
-

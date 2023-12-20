@@ -9,6 +9,7 @@
     <title>Authorisation</title>
     <link rel="stylesheet" href="../index.css">
     <link rel="script" href="../script.js">
+    <link rel="icon" href="../pics/pumba.svg">
 </head>
 <body>
 <header class="header">
@@ -36,8 +37,8 @@
                 <input class="header_input" type="search" placeholder="Пошук">
             </label>
             <div class="nav_icons">
-                <button class="nav_button_icon"><img src="../pics/shop.svg" alt="" width="32" id="market_btn"></button>
-                <button class="nav_button_icon"><img src="../pics/person.svg" alt="" width="45" id="acc_btn"></button>
+                <button class="nav_button_icon"><img src="../pics/shop.svg" alt="" width="32" id="market_btn" onclick="toggleMarket()"></button>
+                <button class="nav_button_icon"><img src="../pics/person.svg" alt="" width="45" id="acc_btn" onclick="toggleNotification()"></button>
             </div>
         </div>
     </div>
@@ -303,7 +304,7 @@
             </div>
         </div>
     </div>
-    <div class="menu-list" id="menu-list">
+    <div class="menu-list" id="menu-list" style="display:none;">
         <a href="" class="nav_item_div"><span class="nav_item"> Чоловіки </span></a>
         <a href="" class="nav_item_div"><span class="nav_item"> Жінки </span></a>
         <a href="" class="nav_item_div"><span class="nav_item"> Діти </span></a>
@@ -312,12 +313,12 @@
         <a href="" class="nav_item_div"><span class="nav_item"> Технології </span></a>
         <a href="" class="nav_item_div"><span class="nav_item"> Розпродаж </span></a>
     </div>
-    <div class="account_div" id="acc_div">
+    <div class="account_div" id="acc_div" style="">
         <div class="acc_info">
             <div class="account_head">
                 <span id="acc_header">Швидкі посилання</span>
                 <button class="btn-krestik" id="btn-krestik-acc"><img src="../pics/krestik.svg" alt="none"
-                                                                      onclick="hideDivAccount()"></button>
+                                                                      onclick="hideNotification()"></button>
             </div>
             <div class="account_info">
                 <a href="../pages/authorisation-page.html">
@@ -350,12 +351,12 @@
             </div>
         </div>
     </div>
-    <div class="market" id="market_div">
+    <div class="market" id="market_div" style="display:none;">
         <div class="market_div">
             <div class="market-el-div">
                 <span id="ur-basket">ВАШ КОШИК(0)</span>
                 <button class="btn-krestik" id="btn-krestik-shop"><img src="../pics/krestik.svg" alt="none"
-                                                                       onclick="hideDivMarket()"></button>
+                                                                       onclick=""></button>
             </div>
             <span id="market-text">Ваш кошик порожній</span>
             <div class="basket"></div>
@@ -399,20 +400,20 @@
                 </div>
                 <div class="buttons">
                     <div id="for-log">
-                        <button class="autor-buttons" id="uviti-acc">УВІЙТИ</button>
+                        <button class="autor-buttons btn-primary" id="uviti-acc" type="submit">УВІЙТИ</button>
                         <div class="div-forgot">
                             <a href="#" id="forgot">ЗАБУЛИ ПАРОЛЬ?</a>
                         </div>
                     </div>
                     <div id="for-reg">
-                        <button class="autor-buttons" id="create-acc">СТВОРИТИ АКАУНТ</button>
+                        <button class="autor-buttons btn-primary" id="create-acc" type="submit">СТВОРИТИ АКАУНТ</button>
                     </div>
                 </div>
             </div>
             <div class="abo">
-                <div class="line_autor"></div>
+                <div class="line_author"></div>
                 <div id="abo">або</div>
-                <div class="line_autor"></div>
+                <div class="line_author"></div>
             </div>
             <div id="another_button">
                 <button id="another"><img src="../pics/google.svg" id="img-dop-acs" alt="">Увійти за допомогою</button>
