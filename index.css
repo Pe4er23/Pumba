@@ -206,6 +206,7 @@ ul, li {
     background-color: #AE946D;
     padding: 7px 0;
     border: none;
+    color:white;
 }
 #link_no_acc {
     font-weight: bold;
@@ -591,8 +592,7 @@ a {
     display:none;
 }
 #for-log{
-    /*display:none;*/
-    width:100%;
+    width:300px;
     display:flex;
     align-items: center;
     justify-content: space-between;
