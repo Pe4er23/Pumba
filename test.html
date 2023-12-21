@@ -1,0 +1,177 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Notification Box</title>-->
+<!--    &lt;!&ndash; Подключаем стили Bootstrap &ndash;&gt;-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <style>-->
+<!--        /* Дополнительные стили для улучшения внешнего вида блока */-->
+<!--        body {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--        }-->
+<!--        #notificationBox{-->
+<!--            animation: fadeInOut 0.5s ease-in-out;-->
+<!--        }-->
+<!--        .notification-box {-->
+<!--            position: fixed;-->
+<!--            top: 0;-->
+<!--            right: 0;-->
+<!--            background-color: #f8d7da;-->
+<!--            padding: 15px;-->
+<!--            display: none;-->
+<!--        }-->
+<!--        .close-btn {-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        @keyframes fadeInOut {-->
+<!--            0% {-->
+<!--                opacity: 0;-->
+<!--                transform: translateY(-20px);-->
+<!--            }-->
+<!--            100% {-->
+<!--                opacity: 1;-->
+<!--                transform: translateY(0);-->
+<!--            }-->
+<!--            /*100% {*/-->
+<!--            /*    opacity: 0;*/-->
+<!--            /*    transform: translateY(-20px);*/-->
+<!--            /*}*/-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash; Кнопка для открытия блока &ndash;&gt;-->
+<!--<button type="button" class="btn btn-danger" onclick="toggleNotification()">-->
+<!--    Показать/Скрыть уведомление-->
+<!--</button>-->
+
+<!--&lt;!&ndash; Блок уведомления &ndash;&gt;-->
+<!--<div class="notification-box" id="notificationBox">-->
+<!--    <div>-->
+<!--        <span class="close-btn" onclick="hideNotification()">Закрыть</span>-->
+<!--    </div>-->
+<!--    <h5>Важное уведомление</h5>-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Ссылка</a></p>-->
+<!--</div>-->
+<!--&lt;!&ndash; Подключаем скрипты Bootstrap (необходимы для работы модальных окон) &ndash;&gt;-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>-->
+<!--<script>-->
+<!--    let notificationBox = document.getElementById("notificationBox");-->
+
+<!--    // Функции для отображения и скрытия блока-->
+<!--    function toggleNotification() {-->
+<!--        if (notificationBox.style.display === "none" || notificationBox.style.display === "") {-->
+<!--            showNotification();-->
+<!--        } else {-->
+<!--            hideNotification();-->
+<!--        }-->
+<!--    }-->
+
+<!--    function showNotification() {-->
+<!--        notificationBox.style.animationDirection = "normal";-->
+<!--        notificationBox.style.animationPlayState = "running";-->
+<!--        setTimeout(function() {-->
+<!--                // notificationBox.style.display = "none";-->
+<!--            //     notificationBox.style.animationDirection = "normal";-->
+<!--                notificationBox.style.animationPlayState = "paused";-->
+<!--            }, 500);-->
+<!--        notificationBox.style.display = "block";-->
+
+<!--    }-->
+
+<!--    function hideNotification() {-->
+<!--        notificationBox.style.animationDirection = "reverse";-->
+<!--        notificationBox.style.animationPlayState = "running";-->
+<!--        // После завершения анимации скрыть блок-->
+<!--        setTimeout(function() {-->
+<!--            notificationBox.style.display = "none";-->
+<!--            // notificationBox.style.animationDirection = "normal";-->
+<!--            // notificationBox.style.animationPlayState = "paused";-->
+<!--        }, 500);-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Box</title>
+    <!-- Подключаем стили Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для улучшения внешнего вида блока */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .notification-box {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #f8d7da;
+            padding: 15px;
+            display: none;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        .close-btn {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Кнопка для открытия блока -->
+<button type="button" class="btn btn-danger" onclick="toggleNotification()">
+    Показать/Скрыть уведомление
+</button>
+
+<!-- Блок уведомления -->
+<div class="notification-box" id="notificationBox">
+    <div>
+        <span class="close-btn" onclick="hideNotification()">Закрыть</span>
+    </div>
+    <h5>Важное уведомление</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Ссылка</a></p>
+</div>
+
+<!-- Подключаем скрипты Bootstrap (необходимы для работы модальных окон) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    let notificationBox = document.getElementById("notificationBox");
+
+    // Функции для отображения и скрытия блока
+    function toggleNotification() {
+        if (notificationBox.style.opacity === "0" || notificationBox.style.opacity === "") {
+            showNotification();
+        } else {
+            hideNotification();
+        }
+    }
+
+    function showNotification() {
+        notificationBox.style.display = "block";
+        setTimeout(function() {
+            notificationBox.style.opacity = "1";
+            notificationBox.style.transform = "translateY(0)";
+        }, 0);
+    }
+
+    function hideNotification() {
+        notificationBox.style.opacity = "0";
+        notificationBox.style.transform = "translateY(-20px)";
+        setTimeout(function() {
+            notificationBox.style.display = "none";
+        }, 500);
+    }
+</script>
+</body>
+</html>
