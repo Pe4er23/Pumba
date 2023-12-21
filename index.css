@@ -204,7 +204,6 @@ ul, li {
     margin:4rem 0 1rem 0;
     width:100%;
     background-color: #AE946D;
-    color: white;
     padding: 7px 0;
     border: none;
 }
@@ -367,7 +366,8 @@ ul, li {
     position: absolute;
     margin: 10% 0 0 100px;
     color:white;
-    transform: translate(20%, 50%)
+    transform: translate(20%, 50%);
+    width: content-box;
 }
 .item_link {
     text-decoration: none;
@@ -396,6 +396,8 @@ ul, li {
 }
 .shop_button {
     padding: 13px 0 ;
+    display:block;
+    justify-content: center;
     font-size: 13px;
     text-align: center;
     font-weight: bold;
@@ -417,12 +419,8 @@ ul, li {
 #white_foot1 {
     width: 194px;
 }
-.buttons {
-    margin: 10px 0 0 0;
-    column-gap: 1px;
-    display: flex;
-}
-.link_button + .link_button {
+
+.shop_button + .shop_button {
     margin: 0 10px 0 20px;
 }
 .shahtar {
@@ -554,10 +552,10 @@ a {
 .buttons{
     display:flex;
     /*justify-content: center;*/
-    /*column-gap: 15px;*/
+    column-gap: 15px;
     align-items: center;
     margin: 13px 0;
-    width:300px;
+    width:fit-content;
 }
 #login {
 }
