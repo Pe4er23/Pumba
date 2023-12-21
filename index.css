@@ -353,9 +353,7 @@ ul, li {
 .item_list:hover .btn-on-pic{
     display:block;
 }
-.item_link {
-    text-decoration: none;
-}
+
 .item_name, .item_price {
     font-size: 14px;
     color: black;
@@ -370,6 +368,14 @@ ul, li {
     margin: 10% 0 0 100px;
     color:white;
     transform: translate(20%, 50%)
+}
+.item_link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+.item_link:hover {
+    color: black;
 }
 .btn-on-pic{
     position:absolute;
